@@ -1,33 +1,15 @@
 <?php
+
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
-$app->get('/', function () {
-    echo 'Hola Mundo!';    
-});
-
-$app->get('/users', function (Request $request, Response $response) {    
-    $this->logger->addInfo('User list'); 
-    $params = $request->getQueryParams();
-    var_dump($params);
-    $userORM = new \App\Models\User();    
-    $users = $userORM::all();
-    // return $response->withStatus(200)->getBody()->write($users->toJson());    
-});
-
-$app->get('/users/{sort}/{order}', function (Request $request, Response $response) {        
-    $this->logger->addInfo('User list sort order'); 
-    $userORM = new \App\Models\User();    
-    $users = $userORM::all();
-    // return $response->withStatus(200)->getBody()->write($users->toJson());    
-});
-
-$app->get('/users/{id}', function(Request $request, Response $response, $args){
-    $this->logger->addInfo('User by id'); 
-    $userId = (int)$args['id'];
-    $userORM = new \App\Models\User();    
-    $user = $userORM->find($userId);
-    return $response->withStatus(200)->getBody()->write($user->toJson());    
+$app->group('/user', function()
+{
+    $this->get('/welcome', \UserApi::class . ':Welcome');
+    $this->get('/', \UserApi::class . ':GetAll');
+    $this->get('/{id}', \UserApi::class . ':GetById');
+    $this->post('/new', \UserApi::class . ':RegisterUser');
+    $this->post('/login', \UserApi::class . ':LoginUser');
 });
     
 $app->group('/orm', function () {

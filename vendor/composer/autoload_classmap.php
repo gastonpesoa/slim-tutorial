@@ -54,6 +54,10 @@ return array(
     'FastRoute\\RouteCollector' => $vendorDir . '/nikic/fast-route/src/RouteCollector.php',
     'FastRoute\\RouteParser' => $vendorDir . '/nikic/fast-route/src/RouteParser.php',
     'FastRoute\\RouteParser\\Std' => $vendorDir . '/nikic/fast-route/src/RouteParser/Std.php',
+    'Firebase\\JWT\\BeforeValidException' => $vendorDir . '/firebase/php-jwt/src/BeforeValidException.php',
+    'Firebase\\JWT\\ExpiredException' => $vendorDir . '/firebase/php-jwt/src/ExpiredException.php',
+    'Firebase\\JWT\\JWT' => $vendorDir . '/firebase/php-jwt/src/JWT.php',
+    'Firebase\\JWT\\SignatureInvalidException' => $vendorDir . '/firebase/php-jwt/src/SignatureInvalidException.php',
     'Illuminate\\Container\\BoundMethod' => $vendorDir . '/illuminate/container/BoundMethod.php',
     'Illuminate\\Container\\Container' => $vendorDir . '/illuminate/container/Container.php',
     'Illuminate\\Container\\ContextualBindingBuilder' => $vendorDir . '/illuminate/container/ContextualBindingBuilder.php',
@@ -634,4 +638,6 @@ return array(
     'Symfony\\Contracts\\Translation\\TranslatorInterface' => $vendorDir . '/symfony/contracts/Translation/TranslatorInterface.php',
     'Symfony\\Contracts\\Translation\\TranslatorTrait' => $vendorDir . '/symfony/contracts/Translation/TranslatorTrait.php',
     'Symfony\\Polyfill\\Mbstring\\Mbstring' => $vendorDir . '/symfony/polyfill-mbstring/Mbstring.php',
+    'Token' => $baseDir . '/clases/Token.php',
+    'UserApi' => $baseDir . '/clases/UserApi.php',
 );

@@ -1,4 +1,5 @@
 <?php
+
 $container = $app->getContainer();
 
 $container['logger'] = function($c) {
@@ -18,6 +19,11 @@ $capsule->bootEloquent();
 //pass the connection to global container (created in previous article)
 $container['db'] = function ($container) use ($capsule){
    return $capsule;
+};
+
+$container['UserApi'] = function($c) {
+    $logger = $c->get('logger');    
+    return new UserApi($logger);
 };
 
 ?>
